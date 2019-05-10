@@ -1,0 +1,36 @@
+{
+  "name": "@youngjs/react-native-officeapps-wrapper",
+  "version": "0.2.0",
+  "description": "The microsoft officeapps wrapper for React Native",
+  "main": "officeapps/dist/index.js",
+  "repository": "https://github.com/young-js/react-native-officeapps-wrapper",
+  "author": "young-js",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prepublish": "tsc -p ./tsconfig.json"
+  },
+  "files": [
+    "officeapps/dist"
+  ],
+  "devDependencies": {
+    "@types/react": "^16.8.17",
+    "@types/react-native": "^0.57.53",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-native": "^3.7.0",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-native": "^0.59.8",
+    "react-native-webview": "^5.8.1",
+    "typescript": "^3.4.5"
+  }
+}

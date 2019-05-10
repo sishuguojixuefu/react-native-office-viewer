@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["esnext"],
+    "types": ["react", "react-native"],
+    "outDir": "officeapps/dist",
+    "jsx": "react",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": false,
+    "strict": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true
+  },
+  "exclude": ["node_modules", "__tests__", "officeapps/dist"]
+}
