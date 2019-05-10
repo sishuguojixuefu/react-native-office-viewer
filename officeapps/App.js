@@ -17,7 +17,7 @@ export default class App extends Component {
           webRef={r => {
             this.webRef = r
           }}
-          source="https://lcfile.sishuxuefu.com/e05a005d4cbd6298066c/test.docx"
+          source="http://storage.xuetangx.com/public_assets/xuetangx/PDF/1.xls"
           onMessage={({ nativeEvent }) => {
             alert(nativeEvent.data)
           }}
