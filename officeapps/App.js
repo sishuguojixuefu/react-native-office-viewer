@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, View } from 'react-native'
-// import OfficeApps from '@youngjs/react-native-officeapps-wrapper'
+// import OfficeApps from '@youngjs/react-native-office-viewer'
 import { OfficeViewer } from './dist'
 
 const run = `window.ReactNativeWebView.postMessage("Hello React Native！")`

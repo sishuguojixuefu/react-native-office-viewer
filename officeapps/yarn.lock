@@ -904,7 +904,7 @@
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
   integrity sha512-SOhuU4wNBxhhTHxYaiG5NY4HBhDIDnJF60GU+2LqHAdKKer86//e4yg69aENCtQ04n0ovz+tq2YPME5t5yp4pw==
 
-"@youngjs/react-native-officeapps-wrapper@^0.1.2":
+"@youngjs/react-native-office-viewer@^0.1.2":
   version "0.1.2"
   resolved "http://npm.youngjuning.com/@youngjs%2freact-native-officeapps-wrapper/-/react-native-officeapps-wrapper-0.1.2.tgz#f109473a88de545849f79873a21aab6c1193b207"
   integrity sha512-3H73QmXHTGfve+jr63NBpUPmXW4v+c5hA9mZuU8Xw2lBpZ2mTZDDFLiWky7Xs6CP+gujx2243/wVuhv18Wo88g==

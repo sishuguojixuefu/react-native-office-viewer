@@ -3,20 +3,20 @@
 ## Install
 
 ```sh
-$ npm install @youngjs/react-native-officeapps-wrapper
+$ npm install @youngjs/react-native-office-viewer
 ```
 
 or
 
 ```sh
-$ yarn add @youngjs/react-native-officeapps-wrapper
+$ yarn add @youngjs/react-native-office-viewer
 ```
 
 ## Use
 
 ```js
 ...
-import { OfficeViewer } from '@youngjs/react-native-officeapps-wrapper'
+import { OfficeViewer } from '@youngjs/react-native-office-viewer'
 ...
 <OfficeViewer containerStyle={{ marginTop: 10 }} source="http://storage.xuetangx.com/public_assets/xuetangx/PDF/1.xls" />
 ...
