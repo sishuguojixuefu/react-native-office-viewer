@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import ReactNative, { View, StyleSheet } from 'react-native'
 import { WebView } from 'react-native-webview'
+import { WebViewMessage } from 'react-native-webview/lib/WebViewTypes'
 
 interface PropTypes {
   readonly source: string
   readonly webRef: (_?: any) => void
   readonly containerStyle?: ReactNative.StyleProp<ReactNative.ViewStyle>
+  readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined
 }
 
 class OfficeViewer extends Component<PropTypes, {}> {
@@ -23,6 +25,7 @@ class OfficeViewer extends Component<PropTypes, {}> {
           source={{
             uri: `https://view.officeapps.live.com/op/view.aspx?src=${source}`,
           }}
+          onMessage={() => {}}
         />
       </View>
     )

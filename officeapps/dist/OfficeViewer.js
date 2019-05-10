@@ -44,7 +44,7 @@ var OfficeViewer = (function (_super) {
         return (react_1.default.createElement(react_native_1.View, { style: [styles.container, containerStyle] },
             react_1.default.createElement(react_native_webview_1.WebView, __assign({}, this.props, { ref: function (r) { return webRef(r); }, source: {
                     uri: "https://view.officeapps.live.com/op/view.aspx?src=" + source,
-                } }))));
+                }, onMessage: function () { } }))));
     };
     return OfficeViewer;
 }(react_1.Component));

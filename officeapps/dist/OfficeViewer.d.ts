@@ -1,9 +1,11 @@
 import { Component } from 'react';
 import ReactNative from 'react-native';
+import { WebViewMessage } from 'react-native-webview/lib/WebViewTypes';
 interface PropTypes {
     readonly source: string;
     readonly webRef: (_?: any) => void;
     readonly containerStyle?: ReactNative.StyleProp<ReactNative.ViewStyle>;
+    readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined;
 }
 declare class OfficeViewer extends Component<PropTypes, {}> {
     static defaultProps: {
