@@ -2,7 +2,7 @@
   "name": "@youngjs/react-native-office-viewer",
   "version": "0.1.0",
   "description": "The microsoft officeapps wrapper for React Native",
-  "main": "officeapps/dist/index.js",
+  "main": "officeviewer/dist/index.js",
   "repository": "https://github.com/young-js/react-native-officeapps-wrapper",
   "author": "young-js",
   "license": "MIT",
