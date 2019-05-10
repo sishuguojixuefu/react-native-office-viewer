@@ -4,7 +4,7 @@
     "module": "commonjs",
     "lib": ["esnext"],
     "types": ["react", "react-native"],
-    "outDir": "officeapps/dist",
+    "outDir": "officeviewer/dist",
     "jsx": "react",
     "sourceMap": true,
     "declaration": true,
@@ -18,5 +18,5 @@
     "esModuleInterop": true,
     "strictNullChecks": true
   },
-  "exclude": ["node_modules", "__tests__", "officeapps/dist"]
+  "exclude": ["node_modules", "__tests__", "officeviewer/dist"]
 }

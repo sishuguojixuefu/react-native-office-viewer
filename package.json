@@ -1,9 +1,9 @@
 {
   "name": "@youngjs/react-native-office-viewer",
   "version": "0.1.0",
-  "description": "The microsoft officeapps wrapper for React Native",
+  "description": "Office Preview Plugin for React Native（support png,pdf,doc,xls,txt...）",
   "main": "officeviewer/dist/index.js",
-  "repository": "https://github.com/young-js/react-native-officeapps-wrapper",
+  "repository": "https://github.com/young-js/react-native-office-viewer",
   "author": "young-js",
   "license": "MIT",
   "private": false,
@@ -11,7 +11,7 @@
     "prepublish": "tsc -p ./tsconfig.json"
   },
   "files": [
-    "officeapps/dist"
+    "officeviewer/dist"
   ],
   "devDependencies": {
     "@types/react": "^16.8.17",
@@ -28,8 +28,6 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-native": "^3.7.0",
     "prettier": "^1.17.0",
-    "react": "^16.8.6",
-    "react-native": "^0.59.8",
     "react-native-webview": "^5.8.1",
     "typescript": "^3.4.5"
   }

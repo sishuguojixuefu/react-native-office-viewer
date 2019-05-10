@@ -60,6 +60,7 @@ module.exports = {
         object: true,
       },
     ],
+    'import/no-unresolved': 0,
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
     'react/prefer-stateless-function': 0,
