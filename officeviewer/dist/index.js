@@ -34,21 +34,39 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_native_1 = require("react-native");
 var react_native_webview_1 = require("react-native-webview");
+var services = {
+    microsoft: 'https://view.officeapps.live.com/op/view.aspx?src=',
+    google: 'https://docs.google.com/viewer?url=',
+    idocv: 'http://api.idocv.com/view/url?url=',
+};
 var OfficeViewer = (function (_super) {
     __extends(OfficeViewer, _super);
     function OfficeViewer() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.getSuffix = function () {
+            var service = _this.props.service;
+            if (service === 'idocv') {
+                return '&type=imgall';
+            }
+            return '';
+        };
+        return _this;
     }
     OfficeViewer.prototype.render = function () {
-        var _a = this.props, webRef = _a.webRef, source = _a.source;
+        var _a = this.props, webRef = _a.webRef, source = _a.source, service = _a.service, injectedJavaScript = _a.injectedJavaScript;
         return (react_1.default.createElement(react_native_1.View, { style: [styles.container] },
             react_1.default.createElement(react_native_webview_1.WebView, __assign({}, this.props, { ref: function (r) {
                     if (webRef) {
                         webRef(r);
                     }
                 }, source: {
-                    uri: source ? "https://view.officeapps.live.com/op/view.aspx?src=" + source : '',
-                } }))));
+                    uri: source ? "" + services[service] + source + this.getSuffix() : '',
+                }, injectedJavaScript: service === 'idocv'
+                    ? "document.getElementsByTagName(\"footer\")[1].remove();" + injectedJavaScript
+                    : injectedJavaScript }))));
+    };
+    OfficeViewer.defaultProps = {
+        service: 'microsoft',
     };
     return OfficeViewer;
 }(react_1.Component));

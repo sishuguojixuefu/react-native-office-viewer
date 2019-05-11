@@ -10,7 +10,8 @@
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-loading-spinner-overlay": "^1.0.1",
-    "react-native-webview": "^5.8.1"
+    "react-native-webview": "^5.8.1",
+    "@youngjs/react-native-office-viewer": "0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

@@ -33,7 +33,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Spinner visible={visible} cancelable animation="fade" textStyle={styles.textStyle} textContent="Loading..." />
-        <OfficeViewer source={source} />
+        <OfficeViewer service="microsoft" source={source} />
       </View>
     )
   }
