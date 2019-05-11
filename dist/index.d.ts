@@ -11,10 +11,15 @@ interface PropTypes {
     readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined;
     readonly injectedJavaScript?: string | undefined;
     readonly service: 'microsoft' | 'google';
+    /**
+     * the mode for microsoft service(default 'pc')
+     */
+    readonly mode?: 'pc' | 'mobile';
 }
 declare class OfficeViewer extends Component<PropTypes, {}> {
     static defaultProps: {
         service: string;
+        mode: string;
     };
     render(): JSX.Element;
 }

@@ -18,15 +18,20 @@ interface PropTypes {
   readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined
   readonly injectedJavaScript?: string | undefined
   readonly service: 'microsoft' | 'google'
+  /**
+   * the mode for microsoft service(default 'pc')
+   */
+  readonly mode?: 'pc' | 'mobile'
 }
 
 class OfficeViewer extends Component<PropTypes, {}> {
   public static defaultProps = {
     service: 'microsoft',
+    mode: 'pc',
   }
 
   public render() {
-    const { webRef, source, service } = this.props
+    const { webRef, source, service, mode } = this.props
     return (
       <View style={[styles.container]}>
         <WebView
@@ -39,7 +44,7 @@ class OfficeViewer extends Component<PropTypes, {}> {
           source={{
             uri: source ? `${services[service]}${source}` : '',
             headers:
-              service === 'microsoft'
+              service === 'microsoft' && mode === 'pc'
                 ? {
                     'user-agent':
                       'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3724.8 Safari/537.36',

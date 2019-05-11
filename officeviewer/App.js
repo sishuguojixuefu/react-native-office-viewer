@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View } from 'react-native'
-// import OfficeApps from '@youngjs/react-native-officeapps-wrapper'
+import OfficeViewer from '@youngjs/react-native-office-viewer'
 import Spinner from 'react-native-loading-spinner-overlay'
-import { OfficeViewer } from './dist'
 
 export default class App extends Component {
   constructor(props) {

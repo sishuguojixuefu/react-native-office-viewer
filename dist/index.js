@@ -44,7 +44,7 @@ var OfficeViewer = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     OfficeViewer.prototype.render = function () {
-        var _a = this.props, webRef = _a.webRef, source = _a.source, service = _a.service;
+        var _a = this.props, webRef = _a.webRef, source = _a.source, service = _a.service, mode = _a.mode;
         return (react_1.default.createElement(react_native_1.View, { style: [styles.container] },
             react_1.default.createElement(react_native_webview_1.WebView, __assign({}, this.props, { ref: function (r) {
                     if (webRef) {
@@ -52,7 +52,7 @@ var OfficeViewer = /** @class */ (function (_super) {
                     }
                 }, source: {
                     uri: source ? "" + services[service] + source : '',
-                    headers: service === 'microsoft'
+                    headers: service === 'microsoft' && mode === 'pc'
                         ? {
                             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3724.8 Safari/537.36',
                         }
@@ -61,6 +61,7 @@ var OfficeViewer = /** @class */ (function (_super) {
     };
     OfficeViewer.defaultProps = {
         service: 'microsoft',
+        mode: 'pc',
     };
     return OfficeViewer;
 }(react_1.Component));
