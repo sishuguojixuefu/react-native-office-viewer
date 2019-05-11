@@ -12,6 +12,12 @@ or
 $ yarn add @youngjs/react-native-office-viewer
 ```
 
+## Link
+
+```sh
+$ react-native link react-native-webview
+```
+
 ## Use
 
 ```js

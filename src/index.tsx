@@ -6,7 +6,6 @@ import { WebViewMessage } from 'react-native-webview/lib/WebViewTypes'
 const services = {
   microsoft: 'https://view.officeapps.live.com/op/view.aspx?src=',
   google: 'https://docs.google.com/viewer?url=',
-  idocv: 'http://api.idocv.com/view/url?url=',
 }
 
 interface PropTypes {
@@ -15,7 +14,7 @@ interface PropTypes {
   readonly webRef: ((_?: any) => void) | undefined
   readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined
   readonly injectedJavaScript?: string | undefined
-  readonly service: 'microsoft' | 'google' | 'idocv'
+  readonly service: 'microsoft' | 'google'
 }
 
 class OfficeViewer extends Component<PropTypes, {}> {
@@ -23,16 +22,8 @@ class OfficeViewer extends Component<PropTypes, {}> {
     service: 'microsoft',
   }
 
-  private getSuffix = () => {
-    const { service } = this.props
-    if (service === 'idocv') {
-      return '&type=imgall'
-    }
-    return ''
-  }
-
   public render() {
-    const { webRef, source, service, injectedJavaScript } = this.props
+    const { webRef, source, service } = this.props
     return (
       <View style={[styles.container]}>
         <WebView
@@ -43,13 +34,8 @@ class OfficeViewer extends Component<PropTypes, {}> {
             }
           }}
           source={{
-            uri: source ? `${services[service]}${source}${this.getSuffix()}` : '',
+            uri: source ? `${services[service]}${source}` : '',
           }}
-          injectedJavaScript={
-            service === 'idocv'
-              ? `document.getElementsByTagName("footer")[1].remove();${injectedJavaScript}`
-              : injectedJavaScript
-          }
         />
       </View>
     )
