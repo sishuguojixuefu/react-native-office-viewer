@@ -10,6 +10,9 @@ const services = {
 
 interface PropTypes {
   readonly style?: ReactNative.StyleProp<ReactNative.ViewStyle>
+  /**
+   * The Doc URI to load in the WebView. Can be a local or remote file.
+   */
   readonly source: string
   readonly webRef: ((_?: any) => void) | undefined
   readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined
@@ -35,6 +38,13 @@ class OfficeViewer extends Component<PropTypes, {}> {
           }}
           source={{
             uri: source ? `${services[service]}${source}` : '',
+            headers:
+              service === 'microsoft'
+                ? {
+                    'user-agent':
+                      'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3724.8 Safari/537.36',
+                  }
+                : {},
           }}
         />
       </View>

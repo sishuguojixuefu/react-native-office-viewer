@@ -38,7 +38,7 @@ var services = {
     microsoft: 'https://view.officeapps.live.com/op/view.aspx?src=',
     google: 'https://docs.google.com/viewer?url=',
 };
-var OfficeViewer = (function (_super) {
+var OfficeViewer = /** @class */ (function (_super) {
     __extends(OfficeViewer, _super);
     function OfficeViewer() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -52,6 +52,11 @@ var OfficeViewer = (function (_super) {
                     }
                 }, source: {
                     uri: source ? "" + services[service] + source : '',
+                    headers: service === 'microsoft'
+                        ? {
+                            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3724.8 Safari/537.36',
+                        }
+                        : {},
                 } }))));
     };
     OfficeViewer.defaultProps = {

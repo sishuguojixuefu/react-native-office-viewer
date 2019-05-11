@@ -10,7 +10,7 @@
     "declaration": true,
     "declarationMap": false,
     "strict": true,
-    "removeComments": true,
+    "removeComments": false,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
