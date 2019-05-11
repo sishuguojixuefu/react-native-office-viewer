@@ -4,27 +4,27 @@ import { WebView } from 'react-native-webview'
 import { WebViewMessage } from 'react-native-webview/lib/WebViewTypes'
 
 interface PropTypes {
+  readonly style?: ReactNative.StyleProp<ReactNative.ViewStyle>
   readonly source: string
-  readonly webRef: (_?: any) => void
-  readonly containerStyle?: ReactNative.StyleProp<ReactNative.ViewStyle>
+  readonly webRef: ((_?: any) => void) | undefined
   readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined
   readonly injectedJavaScript?: string | undefined
 }
 
 class OfficeViewer extends Component<PropTypes, {}> {
-  public static defaultProps: {
-    webRef: (_?: any) => {}
-  }
-
   public render() {
-    const { webRef, source, containerStyle } = this.props
+    const { webRef, source } = this.props
     return (
-      <View style={[styles.container, containerStyle]}>
+      <View style={[styles.container]}>
         <WebView
           {...this.props}
-          ref={r => webRef(r)}
+          ref={r => {
+            if (webRef) {
+              webRef(r)
+            }
+          }}
           source={{
-            uri: `https://view.officeapps.live.com/op/view.aspx?src=${source}`,
+            uri: source ? `https://view.officeapps.live.com/op/view.aspx?src=${source}` : '',
           }}
         />
       </View>

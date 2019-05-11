@@ -40,10 +40,14 @@ var OfficeViewer = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     OfficeViewer.prototype.render = function () {
-        var _a = this.props, webRef = _a.webRef, source = _a.source, containerStyle = _a.containerStyle;
-        return (react_1.default.createElement(react_native_1.View, { style: [styles.container, containerStyle] },
-            react_1.default.createElement(react_native_webview_1.WebView, __assign({}, this.props, { ref: function (r) { return webRef(r); }, source: {
-                    uri: "https://view.officeapps.live.com/op/view.aspx?src=" + source,
+        var _a = this.props, webRef = _a.webRef, source = _a.source;
+        return (react_1.default.createElement(react_native_1.View, { style: [styles.container] },
+            react_1.default.createElement(react_native_webview_1.WebView, __assign({}, this.props, { ref: function (r) {
+                    if (webRef) {
+                        webRef(r);
+                    }
+                }, source: {
+                    uri: source ? "https://view.officeapps.live.com/op/view.aspx?src=" + source : '',
                 } }))));
     };
     return OfficeViewer;

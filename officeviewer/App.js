@@ -1,27 +1,39 @@
 import React, { Component } from 'react'
 import { StyleSheet, View } from 'react-native'
 // import OfficeApps from '@youngjs/react-native-officeapps-wrapper'
+import Spinner from 'react-native-loading-spinner-overlay'
 import { OfficeViewer } from './dist'
 
-const run = `window.ReactNativeWebView.postMessage("Hello React Native！")`
-
 export default class App extends Component {
-  componentDidMount() {
-    this.webRef.injectJavaScript(run)
+  constructor(props) {
+    super(props)
+    this.state = {
+      source: '',
+      visible: false,
+    }
+  }
+
+  async componentDidMount() {
+    try {
+      this.setState({ visible: true })
+      const response = await fetch('http://yapi.youngjuning.com/mock/11/api/office')
+      const responseJson = await response.json()
+      this.setState({
+        source: responseJson.docx,
+        visible: false,
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {
+    const { visible, source } = this.state
+
     return (
       <View style={styles.container}>
-        <OfficeViewer
-          webRef={r => {
-            this.webRef = r
-          }}
-          source="https://lcfile.sishuxuefu.com/e05a005d4cbd6298066c/test.docx"
-          onMessage={({ nativeEvent }) => {
-            alert(nativeEvent.data)
-          }}
-        />
+        <Spinner visible={visible} cancelable animation="fade" textStyle={styles.textStyle} textContent="Loading..." />
+        <OfficeViewer source={source} />
       </View>
     )
   }
@@ -31,5 +43,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F5FCFF',
     flex: 1,
+  },
+  textStyle: {
+    color: '#ffffff',
   },
 })
