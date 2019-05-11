@@ -1,6 +1,6 @@
 {
   "name": "@youngjs/react-native-office-viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Office Preview Plugin for React Native（support png,pdf,doc,xls,txt...）",
   "main": "officeviewer/dist/index.js",
   "repository": "https://github.com/young-js/react-native-office-viewer",
