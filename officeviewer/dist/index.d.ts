@@ -7,13 +7,12 @@ interface PropTypes {
     readonly webRef: ((_?: any) => void) | undefined;
     readonly onMessage?: ((event: ReactNative.NativeSyntheticEvent<WebViewMessage>) => void) | undefined;
     readonly injectedJavaScript?: string | undefined;
-    readonly service: 'microsoft' | 'google' | 'idocv';
+    readonly service: 'microsoft' | 'google';
 }
 declare class OfficeViewer extends Component<PropTypes, {}> {
     static defaultProps: {
         service: string;
     };
-    private getSuffix;
     render(): JSX.Element;
 }
 export { OfficeViewer };
