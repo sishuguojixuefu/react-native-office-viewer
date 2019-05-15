@@ -32,6 +32,7 @@ module.exports = {
   rules: {
     'global-require': 0,
     'linebreak-style': [2, 'unix'],
+    'no-unused-vars': ['error', { args: 'none' }],
     'no-console': [
       'error',
       {
