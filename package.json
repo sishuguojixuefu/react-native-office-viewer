@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "postversion": "tsc -p ./tsconfig.json && git push --tags",
+    "postversion": "git push --tags",
     "prepublishOnly": "tsc -p ./tsconfig.json"
   },
   "files": [
