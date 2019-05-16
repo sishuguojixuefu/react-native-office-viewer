@@ -1,3 +1,6 @@
 **/node_modules/*
-**/dist/*
-*.d.ts
+src/**/*.js
+src/**/*.jsx
+src/**/*.ts
+src/**/*.tsx
+dist/
