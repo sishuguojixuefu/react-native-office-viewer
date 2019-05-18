@@ -36,10 +36,6 @@ module.exports = {
     // ESLint 支持在配置文件添加共享设置
     'import/resolver': {
       typescript: {},
-      'babel-plugin-root-import': {
-        rootPathSuffix: 'src',
-        rootPathPrefix: '~',
-      },
     },
   },
   rules: {
@@ -98,5 +94,6 @@ module.exports = {
       allowExpressions: true,
       allowTypedFunctionExpressions: true,
     },
+    '@typescript-eslint/no-explicit-any': 0,
   },
 }
