@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "*": ["types/*"] },
     "target": "esnext",
     "module": "commonjs",
     "lib": ["esnext"],
@@ -13,7 +15,8 @@
     "esModuleInterop": true,
     "types": ["react", "react-native"],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "suppressImplicitAnyIndexErrors": true
   },
-  "exclude": ["node_modules", "dist"]
+  "include": ["officeviewer/src"]
 }
