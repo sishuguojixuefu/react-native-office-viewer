@@ -1,14 +1,15 @@
 {
-  "name": "@youngjs/react-native-office-viewer",
+  "name": "@sishuguojixuefu/react-native-office-viewer",
   "version": "0.0.5",
   "description": "Office Preview Plugin for React Native（support png,pdf,doc,docx,xls,txt...）",
   "main": "dist/index.js",
-  "repository": "https://github.com/young-js/react-native-office-viewer",
-  "author": "young-js",
+  "repository": "https://github.com/@sishuguojixuefu/react-native-office-viewer",
+  "author": "杨俊宁",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "postversion": "git push --tags",
+    "build": "tsc -p ./tsconfig.json",
+    "postversion": "git push --tags && git push && npm publish",
     "prepublishOnly": "tsc -p ./tsconfig.json"
   },
   "files": [
